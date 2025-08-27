@@ -1,23 +1,32 @@
-import React from 'react'
-import './App.css'
-import Counter from './components/Counter'
-import EffectDemo from './components/EffectDemo'
-import RefDemo from './components/RefDemo'
+import React from 'react';
+import { ThemeProvider } from './components/ThemeContext.jsx';
+import Toolbar from './components/Toolbar.jsx';
+import ProductFilter from './components/ProductFilter.jsx';
+import Counter from './components/Counter.jsx';
+import EffectDemo from './components/EffectDemo.jsx';
+import RefDemo from './components/RefDemo.jsx';
 
-function App() {
 
+
+export default function App() {
   return (
-
     <>
-    <h1>Hooks en React</h1>
-    <br />
-    <Counter />
-    <br />
-    <EffectDemo />
-    <br />
-    <RefDemo />
-    </>
-      )
-}
+    <ThemeProvider>
+      <div style={{ padding: '20px' }}>
+        <h1>React Hooks Demo - useContext</h1>
+        <Toolbar />
+      </div>
+      </ThemeProvider>
+      <br/>
+      <ProductFilter />
+      <Counter  />
+      <br/>
+      <EffectDemo />
+      <br/>
+      <RefDemo />
 
-export default App
+
+    </>
+    
+  );
+}
